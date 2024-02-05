@@ -1,0 +1,30 @@
+<html>
+
+
+<body>
+    <script src="https://unpkg.com/htmx.org@1.9.10"></script>
+
+    <!-- have a button POST a click via AJAX -->
+    <button hx-target="#posts" hx-get="/quote" hx-swap="afterbegin">
+        Post random quote
+    </button>
+
+    <!-- <form id="post-form" action="/post" method="POST" hx-post="/post" hx-select="#post-form" hx-target="#posts" -->
+    <form hx-post="/post" hx-target="#posts" hx-swap="afterbegin">
+        <div class="form-content">
+            <label for="name">Post Content:</label>
+            <input type="text" name="content" required />
+        </div>
+        <div class="form-submit">
+            <input type="submit" value="Post" />
+        </div>
+    </form>
+
+
+    <div id="posts">
+        <p>Hello, world!</p>
+    </div>
+
+</body>
+
+</html>
